@@ -55,4 +55,11 @@ fixed-size chunks straddling section boundaries are scored fairly.
 
 ## What I learned
 
-- *(fill in after the project closes)*
+- Retrieval can be measured before generation exists — and should be; a chatbot would have hidden every failure I found.
+- Chunking moved the numbers more than retriever choice. The boring layer is the load-bearing one.
+- Fixed windows won on this corpus partly by accident: boundary bleed smuggled neighboring context into every chunk.
+- Structure chunks fail by isolation — a section that doesn't repeat its document's key terms is invisible.
+- BM25 and vector have opposite blind spots (exact tokens vs. paraphrase), and their scores can't be averaged — rank fusion exists because the scales are incommensurable.
+- A reranker fixes ranking, never recall. Whether a failure is one or the other is a measurement (pool membership), not an opinion.
+- Contextual prefixes reallocate strength; they don't add it. Every fix I measured created or revealed a cost somewhere else.
+- A benchmark that saturates (hit rate 1.0) has stopped measuring — MRR and harder questions are how you keep it honest.

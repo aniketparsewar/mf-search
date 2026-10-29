@@ -28,7 +28,7 @@ def main() -> None:
     ap.add_argument("--method", default="hybrid",
                     choices=["vector", "bm25", "hybrid"])
     ap.add_argument("--chunking", default="structure",
-                    choices=["fixed", "structure"])
+                    choices=["fixed", "structure", "structure_ctx"])
     ap.add_argument("--k", type=int, default=5)
     a = ap.parse_args()
 

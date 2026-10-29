@@ -33,7 +33,7 @@ def main() -> None:
              f"Questions: {len(QUESTIONS)} · k = {K}", "",
              "| Chunking | Retriever | Hit rate | Recall@k | MRR |",
              "|----------|-----------|----------|----------|-----|"]
-    for strategy in ["fixed", "structure"]:
+    for strategy in ["fixed", "structure", "structure_ctx"]:
         chunks = chunk_corpus(docs, strategy)
         index = Index(chunks)
         print(f"{strategy}: {len(chunks)} chunks")
